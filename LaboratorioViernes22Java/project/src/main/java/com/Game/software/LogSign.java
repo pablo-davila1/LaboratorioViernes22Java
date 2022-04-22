@@ -11,13 +11,16 @@ public class LogSign   {
         this.player = player;
     }
 
-    void Signin(String player) throws Exception{
+    String Signin(String player) throws Exception{
         File points = new File(this.Users);
         Scanner users = new Scanner(points);
 
         while (users.hasNextLine()){
-            System.out.println(users.nextLine());
+            String a = users.nextLine().split(" ")[0];
+            if(a == player ) {
+                return player;
+            }
         }
-
+        return null;
     }
 }
