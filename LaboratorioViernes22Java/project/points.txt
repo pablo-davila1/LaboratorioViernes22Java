@@ -1,0 +1,12 @@
+player1 25
+player2 15
+player3 10
+player4 15
+player5 20
+player5 20
+player5 20
+player5 20
+player5 20
+player5 20
+player5 20
+player5 20
