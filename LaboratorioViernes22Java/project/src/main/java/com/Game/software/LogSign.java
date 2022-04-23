@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class LogSign   {
     private String player = "";
+    private  String name ="";
     private String Users = "C:\\Users\\HP\\Documents\\LaboratorioViernes22Java\\project\\points.txt";
 
     public LogSign (String player){
@@ -16,11 +17,12 @@ public class LogSign   {
         Scanner users = new Scanner(points);
 
         while (users.hasNextLine()){
-            String a = users.nextLine().split(" ")[0];
-            if(a == player ) {
+            name = users.nextLine().split(" ")[0];
+            if(player.equals(this.name) ) {
                 return player;
             }
         }
         return null;
     }
+    //void Singup(String)
 }
