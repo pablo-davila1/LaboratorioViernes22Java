@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Question {
     private Integer level =0;
     private Integer line =0;
+    private String point = "";
     private String document = "";
     private String answer = "";
     private double numberQuest = Math.floor(Math.random()*5+1);
@@ -17,6 +18,14 @@ public class Question {
     public Question(Integer level){
         this.level=level;
 
+    }
+    public Question (String point){
+        this.point = point;
+    }
+    String PointSimulator (String point){
+        Integer int_point = Integer.parseInt(point);
+        int_point++;
+        return String.valueOf(int_point);
     }
 
     String ShowQuestion(Integer level) throws Exception{

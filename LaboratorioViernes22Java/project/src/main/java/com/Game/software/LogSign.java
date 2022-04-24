@@ -3,7 +3,7 @@ package com.Game.software;
 import java.io.File;
 import java.util.Scanner;
 
-public class LogSign   {
+public class LogSign  extends Rename{
     private String player = "";
     private  String name ="";
     private String[] player_info = {"",""};

@@ -9,7 +9,6 @@ public class Main {
         Menu menu = new Menu();
         LogSign usuarios = new LogSign("");
         String[] player_info = usuarios.Signin("player1");
-        //System.out.println("Name: "+player_info[0]+" Level: "+player_info[1]);
         Integer opcion =0 ;
 
         Question question = new Question(0);
@@ -25,29 +24,35 @@ public class Main {
                     Scanner teclado = new Scanner(System.in);
                     System.out.println("Ingrese su usuario: ");
                     String User = teclado.nextLine();
+                    SobreEscribir archivo = new SobreEscribir("");
+
                     if(usuarios.Signin(User) != null) {
                         String User_info []= usuarios.Signin(User);
                         String answer = question.ShowQuestion(Integer.parseInt(User_info[1]));
                         System.out.println("Cual es la respuesta correcta?");
                         String Useranswer = teclado.nextLine();
+                        Integer new_point = 0;
+                        Question simulador = new Question("0");
+
+                        User_info[1] = simulador.PointSimulator(User_info[1]);
                         while (Useranswer.equals(answer)){
                             System.out.println("Correcto");
                             answer = question.ShowQuestion(Integer.parseInt(User_info[1]));
                             System.out.println("Cual es la respuesta correcta?");
                             Useranswer = teclado.nextLine();
 
-                            break;
+                            User_info[1] = simulador.PointSimulator(User_info[1]);
+
+                            usuarios.RenameTo();
+                            archivo.Actualizar(User_info[0]);
+
+
                         }
                         System.out.println("INCORRECTOO:(((((");
 
                     }
 
 
-                    break;
-                }
-                case 2:
-                {
-                    System.out.println("usted se registro");
                     break;
                 }
                 case 3:
