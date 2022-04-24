@@ -15,7 +15,7 @@ public class arch {
         FileWriter Modificar;
         PrintWriter puntos;
         try {
-            File temp = new File("C:\\Users\\HP\\Documents\\LaboratorioViernes22Java\\project\\points-copia.txt");
+            File temp = new File("C:\\Users\\HP\\Documents\\LaboratorioViernes22Java\\project\\temp.txt");
             if (!temp.exists()) {
                 temp.createNewFile();
             }
@@ -23,18 +23,21 @@ public class arch {
             Scanner users = new Scanner(points);
             String [] info_user;
             String user = "player6";
-            Modificar = new FileWriter(temp, true);
+            Modificar = new FileWriter(temp);
             puntos = new PrintWriter(Modificar);
+            String new_line = "";
             while (users.hasNextLine()){
                 info_user = users.nextLine().split(" ");
                 if(user.equals(info_user[0])){
                     Integer new_point = 0;
                     new_point  = Integer.parseInt(info_user[1]);
                     new_point++;
-                    puntos.println(info_user[0]+" "+String.valueOf(new_point));
+                    new_line = info_user[0]+" "+String.valueOf(new_point);
+                    puntos.println(new_line);
                 }
                 else {
-                    puntos.println(info_user[0]+" "+info_user[2]);
+                    new_line = info_user[0]+" "+info_user[1];
+                    puntos.println(new_line);
                 }
 
             }
