@@ -23,10 +23,11 @@ public class LogSign   {
             if(player.equals(this.name) ) {
                 player_info[0]=player;
                 player_info[1]=Users_info[1];
-
+                users.close();
                 return player_info;
             }
         }
+        users.close();
         return null;
     }
     //void Singup(String)

@@ -30,8 +30,12 @@ public class Main {
                         String answer = question.ShowQuestion(Integer.parseInt(User_info[1]));
                         System.out.println("Cual es la respuesta correcta?");
                         String Useranswer = teclado.nextLine();
-                        if(Useranswer.equals(answer)){
+                        while (Useranswer.equals(answer)){
                             System.out.println("Correcto");
+                            answer = question.ShowQuestion(Integer.parseInt(User_info[1]));
+                            System.out.println("Cual es la respuesta correcta?");
+                            Useranswer = teclado.nextLine();
+
                             break;
                         }
                         System.out.println("INCORRECTOO:(((((");

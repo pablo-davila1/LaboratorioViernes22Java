@@ -50,10 +50,8 @@ public class Question {
             else
                 users.nextLine();
             c++;
-
         }
-
-
+        users.close();
         return null;
     }
 }
